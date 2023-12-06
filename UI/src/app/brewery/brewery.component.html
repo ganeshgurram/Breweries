@@ -1,0 +1,58 @@
+<div *ngIf="brewery" class="brewery-details-container">
+    <h2 class="brewery-name">{{ brewery.breweryDetails.name }}</h2>
+    <div class="brewery-info">
+      <p><span class="label">Id:</span> {{ brewery.breweryDetails.id }}</p>
+      <p><span class="label">Brewery Type:</span> {{ brewery.breweryDetails.brewery_type }}</p>
+      <p><span class="label">Phone:</span> {{ brewery.breweryDetails.phone }}</p>
+      <p><span class="label">Website Url:</span> {{ brewery.breweryDetails.website_url }}</p>
+      <p><span class="label">Street:</span> {{ brewery.breweryDetails.street }}</p>
+      <p><span class="label">Addresses:</span> {{ brewery.breweryDetails.address_1 }} {{ brewery.breweryDetails.address_2 }} {{ brewery.breweryDetails.address_3 }}</p>
+      <p><span class="label">City:</span> {{ brewery.breweryDetails.city }}</p>
+      <p><span class="label">State Province:</span> {{ brewery.breweryDetails.state_province }}</p>
+      <p><span class="label">Postal Code:</span> {{ brewery.breweryDetails.postal_code }}</p>
+      <p><span class="label">Country:</span> {{ brewery.breweryDetails.country }}</p>
+      <p><span class="label">Longitude:</span> {{ brewery.breweryDetails.longitude }}</p>
+      <p><span class="label">Latitude:</span> {{ brewery.breweryDetails.latitude }}</p>
+    </div>
+
+    <h3 class="reviews-header">Reviews:</h3>
+
+    <div *ngFor="let review of brewery.reviewRatings" class="review-item">
+    <div class="rating-stars">
+    <span class="label">Rating:</span>
+    <div class="rating-star">
+      <input type="radio" id="star51" [checked]="review.rating === 5" disabled />
+      <label for="star5">&#9734;</label>
+      <input type="radio" id="star41" [checked]="review.rating === 4" disabled />
+      <label for="star4">&#9734;</label>
+      <input type="radio" id="star31" [checked]="review.rating === 3" disabled />
+      <label for="star3">&#9734;</label>
+      <input type="radio" id="star21" [checked]="review.rating === 2" disabled />
+      <label for="star2">&#9734;</label>
+      <input type="radio" id="star11" [checked]="review.rating === 1" disabled />
+      <label for="star1">&#9734;</label>
+    </div>
+  </div>
+  <p><span class="label">Review:</span> {{ review.review }}</p>
+  <hr />
+      <hr />
+    </div>
+    
+    <div class="user-review">
+      <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5" (click)="setRating(5)">
+        <label for="star5">&#9734;</label>
+        <input type="radio" id="star4" name="rating" value="4" (click)="setRating(4)">
+        <label for="star4">&#9734;</label>
+        <input type="radio" id="star3" name="rating" value="3" (click)="setRating(3)">
+        <label for="star3">&#9734;</label>
+        <input type="radio" id="star2" name="rating" value="2" (click)="setRating(2)">
+        <label for="star2">&#9734;</label>
+        <input type="radio" id="star1" name="rating" value="1" (click)="setRating(1)">
+        <label for="star1">&#9734;</label>
+      </div>
+
+      <textarea [(ngModel)]="newReview" placeholder="Add a review"></textarea>
+      <button (click)="addReview()">Submit Review</button>
+    </div>
+  </div>

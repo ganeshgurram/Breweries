@@ -1,0 +1,18 @@
+  <div class="brewery-search-container">
+    <h2>Brewery Search</h2>
+    <div class="search-bar">
+      <input [(ngModel)]="searchTerm" placeholder="Enter search term" />
+      <button (click)="search()">Search</button>
+    </div>
+
+    <div class="search-results" *ngIf="breweries.length > 0">
+      <div *ngFor="let brewery of breweries" class="brewery-item">
+        <div class="brewery-details">
+          <p><span class="label">Name:</span> {{ brewery.name }}</p>
+          <p><span class="label">Brewery Type:</span> {{ brewery.brewery_type }}</p>
+        </div>
+        <a [routerLink]="['/brewery', brewery?.id]" class="view-link">View >></a>
+        <hr />
+      </div>
+    </div>
+  </div>

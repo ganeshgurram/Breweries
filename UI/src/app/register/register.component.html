@@ -1,0 +1,87 @@
+<div class="login-main-wrap">
+    <div class="left-wrap">
+      <div class="login-wrapper">
+        <div class="login--container">
+  
+          <div class="form_box_wrap">
+           <b><h2 style="text-align: center;">REGISTER</h2></b>
+            <form novalidate="" class="login-form">
+              <div class="row login-form-row">
+                <div>
+                  <input type="text"
+                         class="form-control login__input"
+                         name="name"
+                         [(ngModel)]="signin.Name"
+                         placeholder="Enter your name"
+                         required />
+                  <div class="input-error-message"
+                       *ngIf="clicked && signin.Name === ''">
+                    Name is required
+                  </div>
+                </div>
+                <div>
+                  <input type="email"
+                         class="form-control login__input"
+                         name="workemail"
+                         [(ngModel)]="signin.UserName"
+                         placeholder="Enter UserName"
+                         required />
+                  <div class="input-error-message mb-15px"
+                       *ngIf="clicked && signin.UserName === ''">
+                    Email/ UserName is required
+                  </div>
+                  <div class="input-error-message mb-15px"
+                       *ngIf="clicked && !isValidEmail && signin.UserName!=''">
+                    Email must be valid
+                  </div>
+                </div>
+                <div>
+                  <input type="password"
+                         class="form-control login__input"
+                         name="password"
+                         [(ngModel)]="signin.Password"
+                         placeholder="Enter password"
+                         required />
+                  <div class="input-error-message mb-15px"
+                       *ngIf="clicked && signin.Password === ''">
+                    Password is required
+                  </div>
+                </div>
+                <div>
+                  <input type="tel"
+                         class="form-control login__input"
+                         name="mobilenumber"
+                         [(ngModel)]="signin.PhoneNumber"
+                         placeholder="Enter your mobile number"
+                         required />
+                  <div class="input-error-message mb-15px"
+                       *ngIf="clicked && signin.PhoneNumber === ''">
+                    Phone Number is required
+                  </div>
+                </div>
+                <div class="mt-15px">
+                  <button type="submit"
+                          class="btn btn-primary btn--brand"
+                          (click)="onSignupClick()">
+                    Sign up
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="dha-div">
+          <div class="lin-div lin-1"></div>
+          <div class="dha-text">Already have an account?</div>
+          <div class="lin-div lin-1"></div>
+        </div>
+        <div>
+          <button type="submit"
+                  class="btn secondary-btn"
+                  (click)="onLoginClick()">
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

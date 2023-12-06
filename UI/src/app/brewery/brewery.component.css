@@ -1,0 +1,103 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; 
+}
+
+.brewery-details-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.brewery-name {
+  text-align: center;
+}
+
+.brewery-info {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.reviews-header {
+  margin-top: 20px;
+}
+
+.review-item {
+  margin-bottom: 15px;
+}
+
+.user-review {
+  margin-top: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: end;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  display: inline-block;
+  padding: 5px;
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+  color: #ffcc00;
+  text-shadow: 0 0 5px #ffcc00;
+}
+
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.rating-stars {
+  display: flex;
+  align-items: flex-end;
+  direction: rtl;
+}
+
+.rating-star input {
+  display: none;
+}
+
+.rating-star label {
+  font-size: 24px;
+  color: #ccc; 
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.rating-star input:checked ~ label {
+  color: #ffcc00; 
+  text-shadow: 0 0 5px #ffcc00;
+}

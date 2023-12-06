@@ -1,0 +1,61 @@
+<form class="login-form">
+  <div class="row login-form-row">
+    <b><h2 style="text-align: center;">LOGIN</h2></b>
+    <div>
+      <input
+        type="email"
+        class="form-control login__input"
+        id="email"
+        name="email"
+        [(ngModel)]="loginObj.UserName"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        formcontrolname="login_email"
+        required
+      />
+      <div
+        class="input-error-message"
+        *ngIf="loginObj.UserName === '' && clicked"
+      >
+        Email is required
+      </div>
+    </div>
+    <div>
+      <input
+        type="password"
+        class="form-control login__input"
+        id="password"
+        name="password"
+        [(ngModel)]="loginObj.Password"
+        placeholder="Enter your password"
+        formcontrolname="login_password"
+        required
+      />
+      <div
+        class="input-error-message mb-15px"
+        *ngIf="loginObj.Password === '' && clicked"
+      >
+        Password is required
+      </div>
+    </div>
+    <div class="mt-15px">
+      <button
+        type="submit"
+        class="btn btn-primary btn--brand"
+        (click)="onLoginClick1()"
+      >
+        Log In
+      </button>
+    </div>
+    <p class= "mt-15px text-align: center ;">or</p>
+    <div class="mt-15px">
+      <button
+        type="submit"
+        class="btn secondary-btn"
+        (click)="onSignClick()"
+      >
+        Sign Up
+      </button>
+    </div>
+  </div>
+</form>
